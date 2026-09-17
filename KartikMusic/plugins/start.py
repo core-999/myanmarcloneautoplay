@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2025-present by TheAloneTeam@Github, < https://github.com/TheAloneTeam >.
-#
-# This file is part of < https://github.com/TheAloneTeam/KartikMusic > project,
-# and is released under the "MIT License".
-# Please see < https://github.com/TheAloneTeam/KartikMusic/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 
 import asyncio
 
@@ -43,11 +34,18 @@ async def start(_, message: types.Message):
     )
 
     key = buttons.start_key(message.lang, private)
-    await message.reply_video(
-        video=config.START_IMG,
-        caption=_text,
+    
+    
+    _text = f'<a href="{config.START_IMG}">\u200b</a>' + _text
+    await message.reply_text(
+        text=_text,
         reply_markup=key,
         quote=not private,
+        link_preview_options=types.LinkPreviewOptions(
+            url=config.START_IMG,
+            prefer_large_media=True,
+            show_above_text=False,
+        ),
     )
 
     if private:
