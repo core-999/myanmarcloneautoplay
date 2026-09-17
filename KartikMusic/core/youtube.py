@@ -19,8 +19,8 @@ import aiohttp
 from KartikMusic import logger
 from KartikMusic.helpers import Track, utils
 
-API_URL = os.environ.get("MEOW_API_URL", "https://music.yukiapi.site")
-API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # 🔑 Get Key: @MeowApiRobot On Telegram
+API_URL = os.environ.get("API_URL", "")
+API_KEY = os.environ.get("API_KEY", "") #
 
 DOWNLOAD_DIR = "downloads"
 
