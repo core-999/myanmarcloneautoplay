@@ -1,10 +1,3 @@
-# Copyright (C) 2021-2022 by Oyekanhaa@Github, < https://github.com/Oyekanhaa>.
-#
-# This file is part of < https://github.com/Oyekanhaa/KanhaMusic > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/Oyekanhaa/KanhaMusic/blob/master/LICENSE >
-#
-# All rights reserved
 
 import asyncio
 import os
