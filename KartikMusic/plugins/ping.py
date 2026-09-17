@@ -1,12 +1,4 @@
-#
-# Copyright (C) 2025-present by TheAloneTeam@Github, < https://github.com/TheAloneTeam >.
-#
-# This file is part of < https://github.com/TheAloneTeam/KartikMusic > project,
-# and is released under the "MIT License".
-# Please see < https://github.com/TheAloneTeam/KartikMusic/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+
 
 import time
 
@@ -40,17 +32,26 @@ async def _ping(_, m: types.Message):
 
     uptime = get_time(int(time.time() - boot))
     latency = round((time.time() - start) * 1000, 2)
-    await sent.edit_media(
-        media=types.InputMediaVideo(
-            media=config.PING_IMG,
-            caption=m.lang["ping_pong"].format(
-                latency,
-                uptime,
-                psutil.cpu_percent(interval=0),
-                psutil.virtual_memory().percent,
-                psutil.disk_usage("/").percent,
-                await Kartik.ping(),
-            ),
-        ),
+    
+    
+    ping_text = m.lang["ping_pong"].format(
+        latency,
+        uptime,
+        psutil.cpu_percent(interval=0),
+        psutil.virtual_memory().percent,
+        psutil.disk_usage("/").percent,
+        await Kartik.ping(),
+    )
+    
+    
+    ping_text = f'<a href="{config.PING_IMG}">\u200b</a>' + ping_text
+    
+    await sent.edit_text(
+        text=ping_text,
         reply_markup=buttons.ping_markup(m.lang["support"]),
+        link_preview_options=types.LinkPreviewOptions(
+            url=config.PING_IMG,
+            prefer_large_media=True,
+            show_above_text=False,
+        ),
     )
