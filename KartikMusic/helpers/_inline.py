@@ -276,6 +276,7 @@ class Inline:
                 self.ikb(text=lang["support"], url=config.SUPPORT_CHAT),
                 self.ikb(text=lang["channel"], url=config.SUPPORT_CHANNEL),
             ],
+            [self.ikb(text="🐼𝐂𝐨𝐫𝐞𝐬_𝟗𝟗𝟗🐼", url=config.OWNER_LINK)],
         ]
         if private:
             pass
