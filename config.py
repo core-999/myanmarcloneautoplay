@@ -44,7 +44,7 @@ class Config:
             if url and "batbin.me" in url
         ]
         self.DEFAULT_THUMB = getenv(
-            "DEFAULT_THUMB", "https://files.catbox.moe/agqvg6.jpg"
+            "DEFAULT_THUMB", "https://files.catbox.moe/cal5f4.jpg"
         )
         self.PING_IMG = getenv("PING_IMG", "https://files.catbox.moe/4f2tgz.mp4")
         self.START_IMG = getenv("START_IMG", "https://h.uguu.se/nKsmSUhR.mp4")
