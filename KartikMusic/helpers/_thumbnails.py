@@ -47,7 +47,7 @@ class Thumbnail:
                 return output
 
              
-            custom_image_url = "https://files.catbox.moe/agqvg6.jpg"
+            custom_image_url = "https://files.catbox.moe/cal5f4.jpg"
 
             
             temp_filename = f"cache/temp_{song.id}.jpg"
